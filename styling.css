@@ -31,6 +31,8 @@ body{
     background-color: #e0efff;
 }
 
+
+
 h1{
     margin-bottom: 0em;
 }
@@ -72,4 +74,12 @@ h3{
 
 .date{
     width:25%;
+}
+
+.pictures{
+  width: 40vw;
+  margin: 1em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
