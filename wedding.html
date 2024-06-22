@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>WHedding</title>
-    <link rel="icon" href="images/favicon.png" type="image/gif" sizes="16x16">
+    <link rel="icon" href="favicon-32x32.png" type="image/gif" sizes="16x16">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap" rel="stylesheet">
@@ -103,6 +103,7 @@
   </head>
 
   <body>
+    
     <div id="catsheet">
         <div id="wdcontent">
             <span class='center-text', style="font-size: 20pt;"><h1>WILLOW AND HANS</h1></span>
@@ -118,35 +119,22 @@
             <div id="rsvp">
                 <h3>Guests</h3>
                 <form>
-                    <div class="checkbox-container">
-                        <input type="checkbox" id="checkbox1" name="option1" value="option1">
-                        <label for="checkbox1">Willow Alber-Martin</label>
-                    </div>
-                    <div class="checkbox-container">
-                        <input type="checkbox" id="checkbox2" name="option2" value="option2">
-                        <label for="checkbox2">Chili Alber-Martin</label>
-                    </div>
-                    <div class="checkbox-container">
-                        <input type="checkbox" id="checkbox3" name="option3" value="option3">
-                        <label for="checkbox3">Ismael Alber-Martin</label>
-                    </div>
-                    <div class="checkbox-container">
-                        <input type="checkbox" id="checkbox4" name="option4" value="option4">
-                        <label for="checkbox4">Phlubbs Alber-Martin</label>
-                    </div>
+                    <div id="checkboxesContainer"></div>
                     <h3>Dietary Restrictions</h3>
                     <div class="text-container">
                         <textarea id="textInput" name="textInput" rows="4" cols="50"></textarea>
                     </div>
-                    <h3>Will you need transportation to the venue?</h3>
-                    <input type="checkbox" id="checkbox5" name="option5" value="option5">
-                    <label for="checkbox5">Yes</label>&nbsp;&nbsp;&nbsp;
-                    <input type="checkbox" id="checkbox6" name="option6" value="option6">
-                    <label for="checkbox6">No</label>
+                    <!-- <h3>Will you need transportation to the venue?</h3>
+                    <input type="checkbox" id="transportationYes" name="transportation" value="yes">
+                    <label for="transportationYes">Yes</label>&nbsp;&nbsp;&nbsp;
+                    <input type="checkbox" id="transportationNo" name="transportation" value="no">
+                    <label for="transportationNo">No</label> -->
                 </form>
     
             </div>
     </div>
     
+  <script src="wedding.js"></script>
   </body>
+  
 </html>
