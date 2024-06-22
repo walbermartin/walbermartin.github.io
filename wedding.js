@@ -58,8 +58,10 @@ function initializeForm(data) {
 
 // Call the function to initialize the form when the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", function() {
+    
     const urlParams = new URLSearchParams(window.location.search);
-    id = urlParams.get('id'); // "John"
+    id = urlParams.get('id');
+    console.log(id);
     const xhr = new XMLHttpRequest();
     xhr.open("GET", "https://ef1a2d4k68.execute-api.us-east-1.amazonaws.com/Testing/rsvp/?userID=" + id);
     xhr.send();
