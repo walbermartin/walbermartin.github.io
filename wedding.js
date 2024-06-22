@@ -1,4 +1,5 @@
 let data = {};
+let id = 0;
 
 // Function to generate checkboxes dynamically
 function generateCheckboxes(data) {
@@ -58,7 +59,7 @@ function initializeForm(data) {
 // Call the function to initialize the form when the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", function() {
     const xhr = new XMLHttpRequest();
-    xhr.open("GET", "https://ef1a2d4k68.execute-api.us-east-1.amazonaws.com/Testing/rsvp/?userID=15");
+    xhr.open("GET", "https://ef1a2d4k68.execute-api.us-east-1.amazonaws.com/Testing/rsvp/?userID=7416");
     xhr.send();
     xhr.responseType = "json";
     xhr.onload = () => {
@@ -77,9 +78,9 @@ let timeoutId; // Variable to hold the timeout ID for debounce
 // Function to perform the desired action (e.g., making API calls, updating UI) on text input change
 function handleInputChange() {
     // Replace with your desired action
-    // const urlParams = new URLSearchParams(window.location.search);
-    // const id = urlParams.get('id'); // "John"
-    let id = 15;
+    const urlParams = new URLSearchParams(window.location.search);
+    id = urlParams.get('id'); // "John"
+    // id = 7416;
 
     console.log(id); // Output: John 30
     console.log("Input changed");
