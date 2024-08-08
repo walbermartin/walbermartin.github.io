@@ -63,8 +63,8 @@ document.addEventListener("DOMContentLoaded", function() {
     for (const [name, value] of params) {
         newParams.append(name.toLowerCase(), value);
     }
-    console.log(urlParams)
-    id = urlParams.get('id');
+    console.log(newParams)
+    id = newParams.get('id');
     console.log(id);
     const xhr = new XMLHttpRequest();
     xhr.open("GET", "https://ef1a2d4k68.execute-api.us-east-1.amazonaws.com/Testing/rsvp/?userID=" + id);
