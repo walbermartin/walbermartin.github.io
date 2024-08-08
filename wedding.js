@@ -59,9 +59,9 @@ function initializeForm(data) {
 // Call the function to initialize the form when the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", function() {
     
-    const urlParams = new URLSearchParams(window.location.search);
-    for (const [name, value] of urlParams) {
-        urlParams.append(name.toLowerCase(), value);
+    const newParams = new URLSearchParams();
+    for (const [name, value] of params) {
+        newParams.append(name.toLowerCase(), value);
     }
     console.log(urlParams)
     id = urlParams.get('id');
