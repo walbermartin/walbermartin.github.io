@@ -59,12 +59,17 @@ function initializeForm(data) {
 // Call the function to initialize the form when the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", function() {
     
-    const newParams = new URLSearchParams();
-    for (const [name, value] of params) {
-        newParams.append(name.toLowerCase(), value);
+    const urlParams = new URLSearchParams(window.location.search);
+
+    // Normalize parameters to lowercase
+    const normalizedParams = new Map();
+
+    for (const [key, value] of urlParams.entries()) {
+        normalizedParams.set(key.toLowerCase(), value);
     }
-    console.log(newParams)
-    id = newParams.get('id');
+
+    console.log(normalizedParams)
+    id = normalizedParams.get('id');
     console.log(id);
     const xhr = new XMLHttpRequest();
     xhr.open("GET", "https://ef1a2d4k68.execute-api.us-east-1.amazonaws.com/Testing/rsvp/?userID=" + id);
