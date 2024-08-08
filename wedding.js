@@ -60,6 +60,10 @@ function initializeForm(data) {
 document.addEventListener("DOMContentLoaded", function() {
     
     const urlParams = new URLSearchParams(window.location.search);
+    for (const [name, value] of params) {
+        urlParams.append(name.toLowerCase(), value);
+    }
+    console.log(urlParams)
     id = urlParams.get('id');
     console.log(id);
     const xhr = new XMLHttpRequest();
