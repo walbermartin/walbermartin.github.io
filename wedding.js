@@ -60,7 +60,7 @@ function initializeForm(data) {
 document.addEventListener("DOMContentLoaded", function() {
     
     const urlParams = new URLSearchParams(window.location.search);
-    for (const [name, value] of params) {
+    for (const [name, value] of urlParams) {
         urlParams.append(name.toLowerCase(), value);
     }
     console.log(urlParams)
