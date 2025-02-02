@@ -1,147 +1,314 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Guest Information</title>
-    <link rel="icon" href="favicon-32x32.png" type="image/gif" sizes="16x16">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap" rel="stylesheet">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Willow Alber-Martin - Personal Website</title>
     <style>
-        body{
-            color: #333; /* Replace with your desired color value */
-            font-family: "Julius Sans One", sans-serif;
-            background-image: url('chili.png');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        #wdcontent{
-            width:60vw;
-            position:relative;
-            left:18vw;  /* (100 - 70)/2 - 2 = 13 */
-            background-color:#fefdf8;
-            padding:1vw 2vw; /*top: 1vw, left: 1vw*/
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9fafb;
         }
 
-        .center-text {
-            display: block; /* This makes the span a block-level element */
-            text-align: center; /* This centers the text inside the block-level span */
-            margin: 0 auto; /* This centers the block-level span within its parent */
+        /* Navigation */
+        nav {
+            background-color: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
         }
 
-        #rsvp {
-            margin-left: 4vw;
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        td {
-            padding: 8px; /* Padding for better visual appearance */
-            border-bottom: 1px solid black; /* Bottom border for each cell */
+        .nav-links {
+            display: flex;
+            gap: 2rem;
         }
 
-        .checkbox-container {
-            display: block;
-            margin-bottom: 10px; /* Space between each checkbox */
+        nav a {
+            text-decoration: none;
+            color: #4b5563;
+            font-weight: 500;
+            transition: color 0.3s;
         }
 
-
-        /* Hide the default checkbox */
-        input[type="checkbox"] {
-            display: none;
+        nav a:hover {
+            color: #1a1a1a;
         }
 
-        /* Create a custom checkbox */
-        input[type="checkbox"] + label::before {
-            content: "";
-            display: inline-block;
-            width: 16px;
-            height: 16px;
-            border: 2px solid #000;
-            border-radius: 8px;
-            margin-right: 10px;
-            vertical-align: middle;
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
 
-        /* Show the checked state */
-        input[type="checkbox"]:checked + label::before {
-            background-color: #000;
-        }
-        .text-container {
-            display: block;
-            margin-bottom: 10px; /* Space between elements */
+        /* Sections */
+        section {
+            padding: 5rem 0;
         }
 
-        .text-container label {
-            display: block;
-            margin-bottom: 5px; /* Space between label and textarea */
+        section:nth-child(even) {
+            background-color: white;
         }
 
-        textarea {
-            width: 30vw; /* Make the textarea take the full width */
-            padding: 8px; /* Add padding for better appearance */
-            box-sizing: border-box; /* Ensure padding does not affect width */
-            border: 1px solid #ccc; /* Border styling */
-            border-radius: 4px; /* Rounded corners */
-            resize: vertical; /* Allow vertical resize only */
-            overflow: auto; /* Ensure scrollbars are shown if needed */
-            line-height: 1.5; /* Set line height for better text spacing */
-            vertical-align: top; /* Align text to the top */
-            background-color: #fefdf8;
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding-top: 8rem;
+            background-color: white;
         }
 
-        #catsheet{
-            background-color: #fefdf8Ef;
-            position: fixed; /*Positioning fixed to stay in place*/
-            top: 0; /* Align to the top of the viewport */
-            left: 0; /* Align to the left of the viewport */
-            width: 100%; /* Full width of the viewport */
-            height: 100%; /* Full height of the viewport */
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 2rem;
+            object-fit: cover;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #4b5563;
+            margin-bottom: 2rem;
+        }
+
+        /* Section Headers */
+        .section-header {
+            font-size: 2rem;
+            color: #1a1a1a;
+            margin-bottom: 2rem;
+        }
+
+        /* Experience Cards */
+        .experience-grid, .education-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .card {
+            border-left: 3px solid #e5e7eb;
+            padding-left: 1.5rem;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+        }
+
+        .card .subtitle {
+            color: #4b5563;
+            margin-bottom: 1rem;
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background-color: #f9fafb;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        /* Contact Section */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-info a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background-color: white;
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .section-header {
+                font-size: 1.75rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
-  </head>
-
-  <body>
-    
-    <div id="catsheet">
-    </div>
-        <div id="wdcontent">
-            <span class='center-text', style="font-size: 20pt;"><h1>WILLOW AND HANS</h1></span>
-            <span class='center-text'><h2>Wedding Ceremony and Reception</h2></span>
-            <span class='center-text'><h3>September 06, 2025 | 2pm</h3></span>
-            <span class='center-text'><h3>1715 Viola Rd. NE, Rochester MN 55906</h3></span>
-            <!-- <span class='center-text'>1715 Viola Rd. NE, Rochester MN 55906</span> -->
-           <!--  <span class='center-text'><h3><i>Reception to Follow</i></h3></span> -->
-
-           <br> 
-            <b>Please check back for important updates regarding this event</b> 
-           
-            <p> Hotel blocking TBD</p>
-            <p> Registry information to come</p>
-
-
-            <hr>
-            <span class='center-text'><h1> RSVP</h1></span>
-            <span class='center-text'><h3> Please respond by November 1</h3></span>
-            <div id="rsvp">
-                <h3>Guests</h3>
-                <form>
-                    <div id="checkboxesContainer"></div>
-                    <h3>Dietary Restrictions or Food Requests</h3>
-                    <div class="text-container">
-                        <textarea id="textInput" name="textInput" rows="4" cols="50"></textarea>
-                    </div>
-                    <!-- <h3>Will you need transportation to the venue?</h3>
-                    <input type="checkbox" id="transportationYes" name="transportation" value="yes">
-                    <label for="transportationYes">Yes</label>&nbsp;&nbsp;&nbsp;
-                    <input type="checkbox" id="transportationNo" name="transportation" value="no">
-                    <label for="transportationNo">No</label> -->
-                </form>
-                <p>(Changes saved automatically)</p>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">Willow Alber-Martin</a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#education">Education</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
             </div>
-    
-  <script src="wedding.js"></script>
-  </body>
-  
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <img src="images/headshotmba.jpg" alt="Willow Alber-Martin" class="profile-img">
+            <h1>Willow Alber-Martin</h1>
+            <p>Healthcare Program Coordinator | MBA/MPH Candidate | Mandarin Speaker</p>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-header">About Me</h2>
+            <p>I am a driven and adaptable graduate student with a strong foundation in program coordination 
+            and project management. Currently pursuing dual master's degrees in Public Health and Business 
+            Administration, I bring expertise in fostering organizational excellence through data-driven 
+            insights and strategic planning.</p>
+            <br>
+            <p>With an intermediate to advanced command of Mandarin Chinese and experience studying in Shanghai, 
+            I bring a global perspective to my work. I excel at cultivating a culture of feedback and 
+            innovation while managing complex projects and collaborating across teams to achieve impactful outcomes.</p>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="container">
+            <h2 class="section-header">Education</h2>
+            <div class="education-grid">
+                <div class="card">
+                    <h3>University of Illinois, Chicago</h3>
+                    <p class="subtitle">Master of Public Health & MBA • Expected May 2025</p>
+                    <p>GPA: 4.0/4.0 (MPH), 3.85/4.0 (MBA)</p>
+                </div>
+                <div class="card">
+                    <h3>University of Colorado, Boulder</h3>
+                    <p class="subtitle">Bachelor of Arts in Molecular and Cellular Biology • May 2022</p>
+                    <p>GPA: 3.385/4.0</p>
+                </div>
+                <div class="card">
+                    <h3>New York University, Shanghai</h3>
+                    <p class="subtitle">Biology Studies • 2018-2020</p>
+                    <p>GPA: 3.2/4.0</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-header">Experience</h2>
+            <div class="experience-grid">
+                <div class="card">
+                    <h3>Program Coordinator</h3>
+                    <p class="subtitle">Building Interdisciplinary Research Careers in Women's Health • Nov 2022 - Present</p>
+                    <p>Leading NIH progress report analysis, administering program events, and managing operational 
+                    efficiency through improved onboarding materials and website management.</p>
+                </div>
+                <div class="card">
+                    <h3>Fundraising and Management Intern</h3>
+                    <p class="subtitle">Your Ally Foundation • Jun 2023 - Sept 2023, Nov 2024 - Present</p>
+                    <p>Developed strategic five-year plan, managed website updates, and collaborated with board 
+                    members on organizational goals and operational strategies.</p>
+                </div>
+                <div class="card">
+                    <h3>Technology Coordinator</h3>
+                    <p class="subtitle">Engineers Without Borders San Francisco • April 2022 - Aug 2023</p>
+                    <p>Enhanced operational systems and led technological setup for annual virtual fundraiser.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-header">Key Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Strategic Management Plan</h3>
+                    <p>Spearheading a comprehensive organizational growth initiative at Your Ally Foundation.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Women's Health Research Day</h3>
+                    <p>Planned and executed large-scale events fostering interdisciplinary collaboration (2023-2025).</p>
+                </div>
+                <div class="project-card">
+                    <h3>HIV Education Campaign</h3>
+                    <p>Contributed to public health advocacy through strategic outreach with Illinois Public Health Association.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Midwest BIRCWH Conference</h3>
+                    <p>Managed logistics and reporting for a regional conference in May 2023.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-header">Get in Touch</h2>
+            <div class="contact-info">
+                <p>I'm always open to discussing new opportunities in healthcare program management, 
+                public health initiatives, or opportunities to leverage my dual MBA/MPH expertise.</p>
+                <a href="mailto:willow.albermartin@gmail.com">willow.albermartin@gmail.com</a>
+                <p>Chicago, IL • (720) 525-8664</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Willow Alber-Martin. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
 </html>
